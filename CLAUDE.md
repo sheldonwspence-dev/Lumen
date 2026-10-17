@@ -8,7 +8,7 @@ One page. Paste a prompt, pick a task (grant proposal, donor email, volunteer ou
 
 The story: Sheldon pitched Lumen as a concept at DECA ICDC 2026 and placed 2nd in the world. This repo is that concept made real. It's his MIT Maker Portfolio project, so the build process matters as much as the result. The original deck is in this repo at `concept/icdc-deck.html`. It's the historical artifact: never modify it.
 
-Production domains: `lumen-theta-ten.vercel.app` and `lumen-oncore1.vercel.app`. Vercel deploys every push to `main`.
+Production domain: `lumen-theta-ten.vercel.app`. Vercel deploys every push to `main`.
 
 ## How we work: background mode
 
@@ -22,7 +22,7 @@ Sheldon wants you to work through milestones without him watching.
   4. A choice that changes what users see or how the product works and isn't settled in this file.
 - For smaller calls, pick the simpler option, log it as "Claude decided, Sheldon to review", and keep going.
 - Everything goes on `main`. Nobody uses production before the Oct 22 user test, so in-progress work there costs nothing.
-- After each push, wait for Vercel to deploy, then test the function with `curl` against a production domain. Visual checks are Sheldon's job at checkpoints.
+- After each push, wait for Vercel to deploy, then test the function with `curl` against the production domain. Visual checks are Sheldon's job at checkpoints.
 - End every milestone by appending a summary to `PROGRESS.md`: what changed, which files, decisions to review, and what Sheldon should look at in the diff. Write it in plain sentences he could use to explain the work to a reviewer.
 
 ## Rules
@@ -49,7 +49,7 @@ Sheldon wants you to work through milestones without him watching.
 
 ## Abuse protection (no extra accounts)
 
-- POST only. Reject requests whose `Origin` isn't one of the production domains above or localhost.
+- POST only. Reject requests whose `Origin` isn't the production domain above or localhost.
 - In-memory per-IP limit, roughly 8 requests per 10 minutes. It's per instance, so it leaks across instances; the monthly spend cap on the Anthropic account is the backstop. Say so in a code comment.
 - Cap input at about 4,000 characters and set a firm `max_tokens`.
 - The page gets a short error code (for example `rate_limited`), which the frontend maps to Sheldon's placeholder messages. Details go to server logs, never the key or the full prompt.
@@ -77,7 +77,7 @@ As close to the ICDC deck as possible, so a reviewer sees the concept that won c
 Create `.claude/settings.json` so background runs don't stall on approvals. Check the current permission-rule syntax in the Claude Code docs first. Commit it; it's part of the public record of how Claude was allowed to work.
 
 - `defaultMode`: `acceptEdits`
-- allow: `git add`, `git commit`, `git push`, `git status`, `git diff`, `git log`, `curl` to the production domains, and a local static file server for previews
+- allow: `git add`, `git commit`, `git push`, `git status`, `git diff`, `git log`, `curl` to the production domain, and a local static file server for previews
 - ask: `git tag`, any package install (`brew`, `npm`, `pip`)
 - deny: reading `.env` files, any `vercel env` command, force pushes, `sudo`, `rm -rf`
 

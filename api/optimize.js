@@ -1,7 +1,6 @@
 // M0: answers a POST with whether the key is configured. Never reads the key's value into a response.
 const ALLOWED_ORIGINS = [
   'https://lumen-theta-ten.vercel.app',
-  'https://lumen-oncore1.vercel.app',
 ];
 
 function originAllowed(origin) {

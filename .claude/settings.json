@@ -9,8 +9,6 @@
       "Bash(git log *)",
       "Bash(curl https://lumen-theta-ten.vercel.app/*)",
       "Bash(curl * https://lumen-theta-ten.vercel.app/*)",
-      "Bash(curl https://lumen-oncore1.vercel.app/*)",
-      "Bash(curl * https://lumen-oncore1.vercel.app/*)",
       "Bash(python3 -m http.server *)"
     ],
     "ask": [
