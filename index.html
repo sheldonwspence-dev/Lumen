@@ -9,6 +9,21 @@
 <body>
   <main>
     <h1>[PLACEHOLDER page.headline: the page's main headline]</h1>
+
+    <form id="form">
+      <label for="input">[PLACEHOLDER input.label: label for the box where the user pastes their prompt]</label>
+      <textarea id="input" rows="8" maxlength="4000"></textarea>
+      <button type="submit" id="submit">[PLACEHOLDER button.optimize: the button that sends the prompt to be improved]</button>
+    </form>
+
+    <p id="status" role="status"></p>
+
+    <section id="result" hidden>
+      <h2>[PLACEHOLDER result.improved.label: heading above the improved prompt]</h2>
+      <p id="improved"></p>
+      <h2>[PLACEHOLDER result.changes.label: heading above the three changes]</h2>
+      <ul id="changes"></ul>
+    </section>
   </main>
   <script src="app.js"></script>
 </body>
