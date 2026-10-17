@@ -14,3 +14,6 @@ Format: `YYYY-MM-DD | decision | why | decided by`
 2026-10-17 | Copy the ICDC deck into this repo at concept/icdc-deck.html | Claude Code working in this repo can't reach the portfolio repo; concept and product sit side by side | Claude proposed in flaw review, Sheldon to confirm
 2026-10-17 | Work on main only, no milestone branches | Keeps unattended runs simple and testable; nobody uses production before the Oct 22 test | Claude proposed in flaw review, Sheldon to confirm
 2026-10-17 | Rewrites never invent facts; missing details become bracketed slots for the user | Prevents made-up grant details, and a sharper prompt should ask for what's missing | Claude proposed in flaw review, Sheldon to confirm
+2026-10-17 | Removed the committed .DS_Store files (root and concept/) from git and added .DS_Store to .gitignore | They are macOS clutter and were committed by accident | Sheldon
+2026-10-17 | .claude/settings.json leaves out defaultMode so the session's auto mode stays; the allow, ask and deny rules are kept | Sheldon wants to keep auto mode, which differs from the acceptEdits setting in CLAUDE.md | Sheldon
+2026-10-17 | api/optimize.js uses Vercel's Web Standard export default { fetch(request) } form | It is the current documented format for a function in a no-framework project | Claude decided, Sheldon to review
