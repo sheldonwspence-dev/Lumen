@@ -17,3 +17,7 @@
 **Look at in the diff.** `.claude/settings.json` (the allow, ask and deny lists), `api/optimize.js` (the origin check), and `.gitignore`.
 
 **COPY.md.** I created it with two placeholders, `page.title` and `page.headline`, and did not commit it. That commit is yours.
+
+### M0 follow-up, Oct 17
+
+You confirmed the four "Sheldon to confirm" decisions, so those lines now read "Sheldon approved". You dropped `lumen-oncore1.vercel.app`, so `lumen-theta-ten.vercel.app` is the only production domain. I changed CLAUDE.md, the origin check in `api/optimize.js` and the `curl` rules in `.claude/settings.json` to match. The M0 entry above still mentions both domains because it records what was true at the time. Vercel's protection setting is untouched. The empty COPY.md template is now committed, and from here on only you commit that file.
