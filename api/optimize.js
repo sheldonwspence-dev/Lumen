@@ -78,7 +78,7 @@ function validate(result) {
 
 function fail(code, status, detail) {
   if (detail) console.error(`optimize ${code}: ${detail}`);
-  return Response.json({ ok: false, error: code, debug: detail }, { status }); // TEMP DEBUG
+  return Response.json({ ok: false, error: code }, { status });
 }
 
 export default {
