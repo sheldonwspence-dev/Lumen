@@ -4,29 +4,36 @@ Write your text under each heading. Claude moves it into the code exactly as wri
 
 ### page.title
 The browser tab title for the page.
+Lumen
 
 
 ### page.headline
 The page's main headline.
+Turn sloppy prompts into sharp ones.
 
 ### input.label
 Label for the box where the user pastes their prompt.
+YOUR PROMPT
 
 
 ### button.optimize
 The button that sends the prompt to be improved.
+Transform my prompt
 
 
 ### result.improved.label
 Heading above the improved prompt.
+AFTER
 
 
 ### result.changes.label
 Heading above the three changes.
+WHAT CHANGED
 
 
 ### status.loading
 Shown while the prompt is being improved.
+Optimizing...
 
 
 ### error.empty_input
@@ -51,16 +58,20 @@ Something went wrong on our side and the user can try again.
 
 ### page.subheading
 The short line under the headline explaining what the tool does.
+Paste how you'd normally ask AI for help. Lumen rewrites it into a prompt that actually works — and teaches you why.
 
 
 ### result.before.label
 Heading above the user's original prompt in the before/after view.
+BEFORE
 
 
 ### button.example
 The button that fills the box with an example prompt.
+Try an example
 
 
 ### input.placeholder
 Placeholder text shown inside the empty prompt box.
+e.g., 'write me a thank you email for a donor'
 
