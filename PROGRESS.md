@@ -35,3 +35,15 @@ You confirmed the four "Sheldon to confirm" decisions, so those lines now read "
 **Decisions to review.** Structured outputs instead of a forced tool call, thinking set to `between_tools`, `max_tokens` 1024 (all approved). I changed CLAUDE.md so I may commit `COPY.md` only to add empty slots. At your request I filled eleven COPY.md slots from the prototype; they are uncommitted for you to review. Five error slots stay empty because the prototype has no error text.
 
 **Look at in the diff.** `api/optimize.js` (origin check, rate limit, validation) and the error handling in `app.js`.
+
+### v1, Oct 19
+
+**What changed.** The page now follows the ICDC prototype's Prompt Optimizer screen: logo mark and wordmark, eyebrow, Fraunces headline with the amber divider, a white card with a soft amber glow, then the before/after view. BEFORE is a plain card, AFTER has the 2px amber border with the model's highlights marked in amber, and WHAT CHANGED is a dark card with three numbered notes. Three task buttons (Grant proposal selected by default) choose which example "Try an example" loads, and the chosen task is also sent to the model as one extra line, "Task: <name>", above the unchanged instructions. The server accepts only the three known task ids. The rate limit is now 40 requests per 10 minutes per IP for the Oct 22 test. Your COPY.md text is in the page exactly as written. On phones the before/after cards stack. Light mode only.
+
+**Files.** `index.html`, `styles.css`, `app.js`, `api/optimize.js`, `DECISIONS.md`, and two empty slots added to `COPY.md`.
+
+**Tested on production.** Donor email and Volunteer outreach requests each returned 200 with an improved prompt, highlights and three changes, and the wording followed the task. An unknown task returned `bad_request`. The live page serves the new markup. I did not look at it in a browser; that's your check.
+
+**Decisions to review.** The three example prompts are copied into `app.js` from the "Before" lines in `optimizer.md`. I added two empty COPY.md slots, `page.eyebrow` and `task.label`, and the page shows their placeholder text until you fill them. The five error messages are still empty, so an error shows its bracketed placeholder. The task line's wording ("Task: Grant proposal") is mine, but it uses only the task names.
+
+**Look at in the diff.** `buildPrompt` and the task check in `api/optimize.js`, the highlight code in `app.js` (built with DOM nodes, never innerHTML), and the breakpoint at the bottom of `styles.css`.
