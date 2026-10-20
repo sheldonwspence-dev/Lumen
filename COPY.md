@@ -48,3 +48,19 @@ The request never reached the server.
 ### error.generic
 Something went wrong on our side and the user can try again.
 
+
+### page.subheading
+The short line under the headline explaining what the tool does.
+
+
+### result.before.label
+Heading above the user's original prompt in the before/after view.
+
+
+### button.example
+The button that fills the box with an example prompt.
+
+
+### input.placeholder
+Placeholder text shown inside the empty prompt box.
+
