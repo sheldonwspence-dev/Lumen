@@ -38,22 +38,27 @@ Optimizing...
 
 ### error.empty_input
 The user pressed the button with nothing pasted.
+No prompt yet! Please type in something.
 
 
 ### error.too_long
 The pasted prompt is over the 4,000 character limit.
+Character limit reached, try shortening a bit.
 
 
 ### error.rate_limited
 The user has made too many requests and should try again later.
+Too much use, come back in a few minutes.
 
 
 ### error.network
 The request never reached the server.
+Internet down.
 
 
 ### error.generic
 Something went wrong on our side and the user can try again.
+Unknown error.
 
 
 ### page.subheading
@@ -78,8 +83,10 @@ e.g., 'write me a thank you email for a donor'
 
 ### page.eyebrow
 The small tracked label above the headline.
+PROMPT OPTIMIZER
 
 
 ### task.label
 Label above the row of three task buttons.
+Task Optimizer
 
