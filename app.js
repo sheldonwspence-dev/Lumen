@@ -1,11 +1,11 @@
 // Talks only to our own /api/optimize. The Anthropic API is never called from the browser.
 const MESSAGES = {
   loading: 'Optimizing...',
-  empty_input: '[PLACEHOLDER error.empty_input: the user pressed the button with nothing pasted]',
-  too_long: '[PLACEHOLDER error.too_long: the pasted prompt is over the 4,000 character limit]',
-  rate_limited: '[PLACEHOLDER error.rate_limited: the user has made too many requests and should try again later]',
-  network: '[PLACEHOLDER error.network: the request never reached the server]',
-  generic: '[PLACEHOLDER error.generic: something went wrong on our side and the user can try again]',
+  empty_input: 'No prompt yet! Please type in something.',
+  too_long: 'Character limit reached, try shortening a bit.',
+  rate_limited: 'Too much use, come back in a few minutes.',
+  network: 'Internet down.',
+  generic: 'Unknown error.',
 };
 
 // The prototype's "before" prompt for each task. Shown in the box by "Try an example";
