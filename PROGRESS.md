@@ -21,3 +21,17 @@
 ### M0 follow-up, Oct 17
 
 You confirmed the four "Sheldon to confirm" decisions, so those lines now read "Sheldon approved". You dropped `lumen-oncore1.vercel.app`, so `lumen-theta-ten.vercel.app` is the only production domain. I changed CLAUDE.md, the origin check in `api/optimize.js` and the `curl` rules in `.claude/settings.json` to match. The M0 entry above still mentions both domains because it records what was true at the time. Vercel's protection setting is untouched. The empty COPY.md template is now committed, and from here on only you commit that file.
+
+### v0, Oct 17–19
+
+**What changed.** The page now sends a pasted prompt to `api/optimize.js`, which loads the Instructions section of `prompts/optimizer.md`, puts the prompt where `${input}` is, calls the Anthropic Messages API with `fetch`, checks the reply has an improved prompt, 3–4 highlights and exactly 3 changes, and sends it back. Abuse protection is on: POST only, an Origin check, about 8 requests per 10 minutes per IP (in memory, so it leaks across instances), a 4,000-character input cap and a firm `max_tokens`. Errors reach the page as short codes. The page is unstyled, as v0 allows.
+
+**Files.** `api/optimize.js`, `index.html`, `app.js`, `concept/icdc-prototype.html` (moved from the repo root), `CLAUDE.md`, `DECISIONS.md`, `COPY.md` (empty slots only committed).
+
+**Tested on production.** After a new key was added in Vercel, a real prompt ("write a grant proposal for our after school tutoring program") returned HTTP 200 with an improved prompt, four highlights and three changes. The rewrite used bracketed slots like `[FUNDER NAME]` and invented no facts.
+
+**What went wrong.** The first live calls failed with Anthropic's `401 authentication_error: invalid x-api-key`. I added a temporary debug field three times to read the error and removed it each time; each is logged in `DECISIONS.md`. The cause was the key in Vercel, fixed on your side.
+
+**Decisions to review.** Structured outputs instead of a forced tool call, thinking set to `between_tools`, `max_tokens` 1024 (all approved). I changed CLAUDE.md so I may commit `COPY.md` only to add empty slots. At your request I filled eleven COPY.md slots from the prototype; they are uncommitted for you to review. Five error slots stay empty because the prototype has no error text.
+
+**Look at in the diff.** `api/optimize.js` (origin check, rate limit, validation) and the error handling in `app.js`.
