@@ -1,6 +1,6 @@
 // Talks only to our own /api/optimize. The Anthropic API is never called from the browser.
 const MESSAGES = {
-  loading: '[PLACEHOLDER status.loading: shown while the prompt is being improved]',
+  loading: 'Optimizing...',
   empty_input: '[PLACEHOLDER error.empty_input: the user pressed the button with nothing pasted]',
   too_long: '[PLACEHOLDER error.too_long: the pasted prompt is over the 4,000 character limit]',
   rate_limited: '[PLACEHOLDER error.rate_limited: the user has made too many requests and should try again later]',
