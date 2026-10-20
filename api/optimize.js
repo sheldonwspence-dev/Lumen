@@ -14,8 +14,9 @@ const ALLOWED_ORIGINS = [
 
 // In-memory per-IP limit. Each serverless instance has its own copy, so the
 // limit leaks across instances; the monthly spend cap on the Anthropic account
-// is the real backstop.
-const RATE_LIMIT = 8;
+// is the real backstop. 40 per 10 minutes lets about four testers share one
+// school connection.
+const RATE_LIMIT = 40;
 const RATE_WINDOW_MS = 10 * 60 * 1000;
 const hits = new Map();
 
@@ -42,7 +43,13 @@ function rateLimited(ip) {
 
 // Only the Instructions section of optimizer.md is sent. The task examples
 // further down that file are for the page's example button, never the model.
-function buildPrompt(input) {
+const TASKS = {
+  grant: 'Grant proposal',
+  donor: 'Donor email',
+  volunteer: 'Volunteer outreach',
+};
+
+function buildPrompt(input, task) {
   const file = readFileSync(join(process.cwd(), 'prompts', 'optimizer.md'), 'utf8');
   const start = file.indexOf('\n## Instructions\n');
   const end = file.indexOf('\n## Task presets');
@@ -50,7 +57,8 @@ function buildPrompt(input) {
   const instructions = file.slice(start + '\n## Instructions\n'.length, end).trim();
   if (!instructions.includes('${input}')) throw new Error('optimizer.md has no ${input} slot');
   // split/join so "$" characters in the user's text are never treated as patterns
-  return instructions.split('${input}').join(input);
+  // The task is one extra line above the instructions; their wording is untouched.
+  return `Task: ${TASKS[task]}\n\n` + instructions.split('${input}').join(input);
 }
 
 const OUTPUT_SCHEMA = {
@@ -93,13 +101,13 @@ export default {
 
     const raw = await request.text();
     if (raw.length > MAX_BODY_CHARS) return fail('too_long', 413);
-    let input;
+    let input, task;
     try {
-      input = JSON.parse(raw).input;
+      ({ input, task } = JSON.parse(raw));
     } catch {
       return fail('bad_request', 400);
     }
-    if (typeof input !== 'string') return fail('bad_request', 400);
+    if (typeof input !== 'string' || !Object.hasOwn(TASKS, task)) return fail('bad_request', 400);
     if (input.trim() === '') return fail('empty_input', 400);
     if (input.length > MAX_INPUT_CHARS) return fail('too_long', 413);
 
@@ -108,7 +116,7 @@ export default {
 
     let prompt;
     try {
-      prompt = buildPrompt(input);
+      prompt = buildPrompt(input, task);
     } catch (err) {
       return fail('server_error', 500, err.message);
     }
