@@ -75,3 +75,11 @@ Try an example
 Placeholder text shown inside the empty prompt box.
 e.g., 'write me a thank you email for a donor'
 
+
+### page.eyebrow
+The small tracked label above the headline.
+
+
+### task.label
+Label above the row of three task buttons.
+
