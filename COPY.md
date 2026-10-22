@@ -90,3 +90,17 @@ PROMPT OPTIMIZER
 Label above the row of three task buttons.
 Task Optimizer
 
+
+### page.audience
+A sentence under the subheading saying who the tool is for and what it does with their prompt.
+This is for nonprofits, companies, and general employees who want to more effectively use AI by putting their initial idea in here, where it will be revised with all the things AI needs, which can be copied and put back into AI.
+
+
+### button.copy
+The button on the AFTER card that copies the improved prompt.
+Copy
+
+
+### button.copied
+What that button says for a moment after copying.
+Copied
