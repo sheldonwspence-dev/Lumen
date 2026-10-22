@@ -47,6 +47,7 @@ const TASKS = {
   grant: 'Grant proposal',
   donor: 'Donor email',
   volunteer: 'Volunteer outreach',
+  other: 'Not one of the presets. Work out the task from the prompt itself',
 };
 
 function buildPrompt(input, task) {

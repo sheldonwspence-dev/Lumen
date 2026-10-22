@@ -24,12 +24,15 @@ const result = document.getElementById('result');
 const improved = document.getElementById('improved');
 const changes = document.getElementById('changes');
 const before = document.getElementById('before');
+const exampleButton = document.getElementById('example');
 const taskButtons = document.querySelectorAll('.task');
 let task = 'grant';
 
 taskButtons.forEach((button) => {
   button.addEventListener('click', () => {
     task = button.dataset.task;
+    // "Anything else" has no example prompt, so the example button is hidden for it.
+    exampleButton.hidden = !(task in EXAMPLES);
     taskButtons.forEach((b) => {
       b.classList.toggle('selected', b === button);
       b.setAttribute('aria-checked', String(b === button));
@@ -48,7 +51,7 @@ copyButton.addEventListener('click', async () => {
   setTimeout(() => { copyButton.textContent = 'Copy'; }, 1500);
 });
 
-document.getElementById('example').addEventListener('click', () => {
+exampleButton.addEventListener('click', () => {
   input.value = EXAMPLES[task];
   input.focus();
 });
