@@ -98,3 +98,25 @@ Follow-up: "I changed a few things and then used it in Claude. Now I have a dece
 Her photos are kept outside the repo and are not committed.
 
 This feedback supports the audience decision logged in `DECISIONS.md` on Oct 22: she is not at a nonprofit, and her one point of confusion was the limited task types. The open issue stays open: all three presets are still nonprofit tasks.
+
+### Correction to the v1.2 entry, Oct 22
+
+The v1.2 screenshot was not saved yet when I tagged `v1.2`. Sheldon took it afterward, on Oct 22. My earlier message said "tag v1.2" as if it already existed; the tag is on commit `64f9ac2`, and the screenshot came later.
+
+### v1.3, Oct 22
+
+**What changed.** A fourth task button, "Anything else" (your text, slot `task.other`), after Volunteer outreach. When it is selected the server sends the model "Task: Not one of the presets. Work out the task from the prompt itself" instead of a task name. `prompts/optimizer.md` is untouched. The example button is hidden for this task because there is no example for it. I committed `COPY.md` separately with your text in it, at your direction.
+
+**Does optimizer.md assume a nonprofit?** Yes, in one place, and I didn't edit it. The first line of the Instructions says "You are Lumen, an AI training platform that helps nonprofit staff write better AI prompts." Everything else in the Instructions is general: the rules about not inventing details, the ALL-CAPS slots, the highlights and the three notes. The task presets lower in the file (grant, donor, volunteer) are nonprofit examples, but they are never sent to the model. In the tests below the model did not seem held back by that line, but one slot did lean nonprofit (see the cover letter).
+
+**Tested on production.** Four prompts outside the presets, all 200, three changes each, highlights found in the text, all under 80 words: a bakery closure email, a landlord-deposit question, a history essay, and a marketing cover letter. One preset prompt ("write me a grant proposal", Grant selected) also passed, so nothing broke. Missing details became bracketed slots in every case, and no names, amounts or dates were invented.
+
+**Small things I noticed, not fixed.**
+- Cover letter: the rewrite said "a [ORGANIZATION TYPE] focused on [MISSION]". "Mission" is a nonprofit word for a company's job application.
+- Landlord question: the rewrite began "I rented a home… and moved out on [DATE]" and "my landlord is keeping my security deposit". The user never said they had moved out. It's slotted, but it is an assumption about the user's situation.
+- Essay: the rewrite added "don't write the essay for me", a constraint the user didn't ask for.
+These come from the model's reading of the unchanged instructions. Changing them means editing your wording, so it's your call.
+
+**Files.** `api/optimize.js`, `index.html`, `app.js`, `COPY.md` (separate commit), `DECISIONS.md`.
+
+**Look at in the diff.** The new entry in `TASKS` in `api/optimize.js`, and the three lines in `app.js` that hide the example button.
