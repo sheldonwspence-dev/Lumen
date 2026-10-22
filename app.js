@@ -37,6 +37,17 @@ taskButtons.forEach((button) => {
   });
 });
 
+const copyButton = document.getElementById('copy');
+copyButton.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(improved.textContent);
+  } catch {
+    return; // clipboard blocked; leave the label alone rather than claim it copied
+  }
+  copyButton.textContent = 'Copied';
+  setTimeout(() => { copyButton.textContent = 'Copy'; }, 1500);
+});
+
 document.getElementById('example').addEventListener('click', () => {
   input.value = EXAMPLES[task];
   input.focus();

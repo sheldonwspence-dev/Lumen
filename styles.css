@@ -56,7 +56,8 @@ h1 {
   margin: 0 0 12px;
 }
 .divider { width: 36px; height: 2px; background: var(--amber-bright); margin-bottom: 14px; }
-.subhead { font-size: 14px; color: var(--grey); max-width: 560px; margin: 0 0 24px; }
+.subhead { font-size: 14px; color: var(--grey); max-width: 560px; margin: 0 0 10px; }
+.audience { font-size: 13px; color: var(--grey-light); max-width: 560px; margin: 0 0 24px; }
 
 .card {
   background: #fff;

@@ -70,3 +70,18 @@ You confirmed the four "Sheldon to confirm" decisions, so those lines now read "
 **Decisions to review.** The `maxlength` change, logged as "Claude decided, Sheldon to review".
 
 **Look at in the diff.** The four-line length check in `app.js` and the removed attribute in `index.html`.
+
+### v1.2, Oct 22
+
+**Tester feedback.** Tester 1, classmate, Oct 22. Answers word for word:
+1. "it transformed my response into something that would give me clear and concise answer without asking it to clarify"
+2. "yes i would this new prompt"
+3. "something that confused me is what the ai was actually used for. when i clicked on the link it didnt tell me what it did"
+
+**What changed.** For answer 3, the page now shows your sentence about who the tool is for and what it does right under the subheading (`page.audience`), exactly as you wrote it. I also added a Copy button on the AFTER card that copies the improved prompt and reads "Copied" for 1.5 seconds, the same words and timing as your prototype. If the browser blocks clipboard access, the label stays "Copy" rather than claiming it worked. The `maxlength` line in `DECISIONS.md` now reads "Sheldon approved".
+
+**Files.** `index.html`, `styles.css`, `app.js`, `DECISIONS.md`, `COPY.md` (separate commit).
+
+**Decisions to review.** You asked me to commit `COPY.md` with your sentence in it, a one-time exception to "empty slots only". The commit message says so and it is logged. I also added `button.copy` and `button.copied` to `COPY.md` with the prototype's words in that same commit.
+
+**Look at in the diff.** The clipboard handler in `app.js` and the new header row in the AFTER card.
