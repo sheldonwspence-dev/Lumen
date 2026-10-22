@@ -104,3 +104,8 @@ Copy
 ### button.copied
 What that button says for a moment after copying.
 Copied
+
+
+### task.other
+The fourth task button, for prompts that don't fit the three presets.
+Anything else
