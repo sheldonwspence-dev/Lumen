@@ -65,6 +65,11 @@ form.addEventListener('submit', async (event) => {
     statusEl.textContent = MESSAGES.empty_input;
     return;
   }
+  // No maxlength on the textarea: it would silently cut a long paste, so this message could never show.
+  if (input.value.length > 4000) {
+    statusEl.textContent = MESSAGES.too_long;
+    return;
+  }
   statusEl.textContent = MESSAGES.loading;
   submit.disabled = true;
   try {
