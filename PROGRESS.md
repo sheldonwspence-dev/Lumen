@@ -85,3 +85,16 @@ You confirmed the four "Sheldon to confirm" decisions, so those lines now read "
 **Decisions to review.** You asked me to commit `COPY.md` with your sentence in it, a one-time exception to "empty slots only". The commit message says so and it is logged. I also added `button.copy` and `button.copied` to `COPY.md` with the prototype's words in that same commit.
 
 **Look at in the diff.** The clipboard handler in `app.js` and the new header row in the AFTER card.
+
+### Tester 2, local attorney, Oct 22, tested v1.1
+
+Answers word for word:
+1. "It showed me before and after, highlighting changes."
+2. "I would use the new prompt."
+3. "the only thing that confused me was the limited types of tasks."
+
+Follow-up: "I changed a few things and then used it in Claude. Now I have a decent draft."
+
+Her photos are kept outside the repo and are not committed.
+
+This feedback supports the audience decision logged in `DECISIONS.md` on Oct 22: she is not at a nonprofit, and her one point of confusion was the limited task types. The open issue stays open: all three presets are still nonprofit tasks.
