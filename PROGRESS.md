@@ -149,3 +149,7 @@ There is no v1.4 screenshot. Nothing visible changed, and the v1.3 screenshot di
 **Decisions to review.** In the Versions table I wrote v1.4 as By "Sheldon" because the edit was to your wording, and v1.1's reason as "Stress test of 16 prompts" because there was no live test that day. Dates are the tag dates, so v0 reads Oct 19 here and Oct 17–19 above.
 
 **Files.** `README.md`, `PROGRESS.md`.
+
+### Application submitted, Oct 22
+
+Sheldon submitted the Horowitz Andreessen Academy application on Oct 22, 2026, with three links: the portfolio, Lumen live (`https://lumen-theta-ten.vercel.app`), and the Lumen repo. Reviewers may be viewing from now on, so the rule to run a live check after every push stays in force.
