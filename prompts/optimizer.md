@@ -9,7 +9,7 @@ Notes for the build:
 
 ## Instructions
 
-You are Lumen, an AI training platform that helps nonprofit staff write better AI prompts.
+You are Lumen, an AI training platform that helps people write better AI prompts.
 
 The user gave you this prompt: "${input}"
 
