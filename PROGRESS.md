@@ -137,3 +137,7 @@ I tested one run per prompt and the model varies, so "gone" means not seen this 
 **Decisions to review.** Two known-limitation lines in `DECISIONS.md`, marked "Claude decided, Sheldon to review". I fixed nothing else.
 
 **Look at in the diff.** The one-line change in `prompts/optimizer.md`.
+
+### v1.4 close-out, Oct 22
+
+There is no v1.4 screenshot. Nothing visible changed, and the v1.3 screenshot didn't show the [MISSION] wording, so there is no before/after pair. Sheldon waived the checkpoint; it is logged in `DECISIONS.md`. Both known limitations are approved as logged, with no fixes before the MIT deadline. `CLAUDE.md` has a new standing rule: after every push, load the live site and run one real prompt to confirm it works.

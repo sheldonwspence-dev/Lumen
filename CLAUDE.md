@@ -23,6 +23,7 @@ Sheldon wants you to work through milestones without him watching.
 - For smaller calls, pick the simpler option, log it as "Claude decided, Sheldon to review", and keep going.
 - Everything goes on `main`. Nobody uses production before the Oct 22 user test, so in-progress work there costs nothing.
 - After each push, wait for Vercel to deploy, then test the function with `curl` against the production domain. Visual checks are Sheldon's job at checkpoints.
+- Lumen is linked from the Academy application, so after every push, once Vercel has deployed, fetch the live page and run one real prompt through `/api/optimize` on the production domain to confirm it works. Report the result in the same message as the push. If either fails, say so first and stop.
 - End every milestone by appending a summary to `PROGRESS.md`: what changed, which files, decisions to review, and what Sheldon should look at in the diff. Write it in plain sentences he could use to explain the work to a reviewer.
 
 ## Rules
