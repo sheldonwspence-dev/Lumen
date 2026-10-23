@@ -141,3 +141,11 @@ I tested one run per prompt and the model varies, so "gone" means not seen this 
 ### v1.4 close-out, Oct 22
 
 There is no v1.4 screenshot. Nothing visible changed, and the v1.3 screenshot didn't show the [MISSION] wording, so there is no before/after pair. Sheldon waived the checkpoint; it is logged in `DECISIONS.md`. Both known limitations are approved as logged, with no fixes before the MIT deadline. `CLAUDE.md` has a new standing rule: after every push, load the live site and run one real prompt to confirm it works.
+
+### README, Oct 22
+
+**What changed.** Added `README.md`. The prose is yours, pasted from chat and not edited; the opening lines are `page.headline`, `page.subheading` and `page.audience` from `COPY.md`. I drafted the Versions table from the tags and this file, and the repo map. Testers stay anonymous. The commit message says which parts are whose.
+
+**Decisions to review.** In the Versions table I wrote v1.4 as By "Sheldon" because the edit was to your wording, and v1.1's reason as "Stress test of 16 prompts" because there was no live test that day. Dates are the tag dates, so v0 reads Oct 19 here and Oct 17–19 above.
+
+**Files.** `README.md`, `PROGRESS.md`.
