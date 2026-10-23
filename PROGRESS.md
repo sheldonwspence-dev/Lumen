@@ -120,3 +120,20 @@ These come from the model's reading of the unchanged instructions. Changing them
 **Files.** `api/optimize.js`, `index.html`, `app.js`, `COPY.md` (separate commit), `DECISIONS.md`.
 
 **Look at in the diff.** The new entry in `TASKS` in `api/optimize.js`, and the three lines in `app.js` that hide the example button.
+
+### v1.4, Oct 22
+
+**What changed.** Tagged `v1.3` and pushed the tag (the screenshot was saved in `raw/06-v1.3/`). Then made your one edit: line 12 of `prompts/optimizer.md` now says "helps people write better AI prompts" instead of "helps nonprofit staff write better AI prompts". Nothing else in the file changed.
+
+**Tested on production after the deploy.** Same four Anything else prompts plus the grant preset, one run each. I retyped the four prompts from my v1.3 notes (bakery closing email, landlord keeping a security deposit, history essay, marketing cover letter), so the wording may differ slightly from last time. All five returned three changes.
+- **Nonprofit words in non-nonprofit prompts: gone.** The cover letter no longer says "mission" or "[ORGANIZATION TYPE]"; it uses [COMPANY NAME]. The grant prompt still says "mission", which is right for a grant.
+- **Facts the user didn't give: one remains.** The landlord rewrite still says "after I moved out on [DATE]", and also assumes the landlord gave a reason (slotted as [REASON, OR 'NONE GIVEN']). The bakery, essay, cover letter and grant rewrites invented nothing beyond bracketed slots.
+- **Added instructions: "don't write the essay for me" is gone.** Smaller additions remain: cover letter "Avoid clichés and generic phrases", and the landlord rewrite asks for a demand letter outline and small claims options when the user only asked "what do I do".
+
+I tested one run per prompt and the model varies, so "gone" means not seen this time, not guaranteed.
+
+**Files.** `prompts/optimizer.md`, `DECISIONS.md`, `PROGRESS.md`.
+
+**Decisions to review.** Two known-limitation lines in `DECISIONS.md`, marked "Claude decided, Sheldon to review". I fixed nothing else.
+
+**Look at in the diff.** The one-line change in `prompts/optimizer.md`.
